@@ -328,7 +328,9 @@ if st.session_state.selected_option == "대표 솔루션":
                 data = st.session_state.df_energy_predict
                 grouped_powerusage = data.groupby('날짜')['MEF_CO2'].sum()
                 max_down_date = grouped_powerusage.idxmin()
-
+                current_dir = os.path.dirname(__file__)
+                default_csv_path = os.path.join(current_dir, 'image', '연구.csv')  # Define default_csv_path here
+                data.to_csv(default_csv_path, index=False)
                 create_comparison_graph(data, max_down_date)
 
             with con2:
