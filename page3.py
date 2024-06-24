@@ -160,7 +160,7 @@ def optimize_data(mef_path_주중, mef_path_주말, e_path):
                 # {'type': 'ineq', 'fun': resist5},
                 # {'type': 'ineq', 'fun': resist6},
                 {'type': 'ineq', 'fun': resist6_1},
-                # {'type': 'ineq', 'fun': resist6_2},
+                {'type': 'ineq', 'fun': resist6_2},
                 # {'type': 'ineq', 'fun': resist7},
             ]
 
