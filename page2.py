@@ -14,7 +14,7 @@ def predict_model(file):
     model.add_seasonality(name='monthly', period=30.5, fourier_order=5)
     # 모델 학습
     model.fit(data[['ds', 'y']])
-    future_dates = pd.date_range(start='2021-01-01', end='2021-12-31 23:00:00', freq='H')
+    future_dates = pd.date_range(start='2021-01-01 00:00:00', end='2021-12-31 23:00:00', freq='H')
     future = pd.DataFrame({'ds': future_dates})
     # 미래 데이터 예측 및
     forecast = model.predict(future)
